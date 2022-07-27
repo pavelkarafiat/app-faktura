@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="cz">
   <head>
@@ -5,12 +6,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"
       integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg=="
@@ -21,25 +16,25 @@
 
   <body>
     <main>
+      
+      <h1>DIY Fakturoid</h1>
       <label for="date">Datum vystavení:</label>
       <input type="date" value="2022-07-01" />
 
       <label for="poradi">Pořadí faktury:</label>
-      <input type="text" id="poradi" name="poradi"> 
+      <input type="text" id="poradi" name="poradi" value="1"> 
 
       <label for="odberatel">Odběratel:</label>
       <textarea id="odberatel" name="odberatel" rows="7" cols="50">
-Cloud Creative s.r.o.<br>
-Holeckova 789<br>
-Praha 5, 15000<br>
-Prague, Czech Republic<br>
-IČ: 03779548
+Firma s.r.o.
+Ulice 23
+Praha 1, 11000
+IČ: 12345678
       </textarea>
 
       <label for="polozka">Položka:</label>
       <textarea id="polozka" name="polozka" rows="2" cols="50">
-Nějaký popis zde.</textarea
-      >
+Nějaký popis zde.</textarea>
 
       <label for="castka">Částka (Kč):</label>
       <input
@@ -53,15 +48,15 @@ Nějaký popis zde.</textarea
         value="9999"
       />
 
-      <label for="a">Název faktury – zpráva pro příjemce:</label>
+      <label for="a">Zpráva pro příjemce (v qr kódu):</label>
       <input
         type="text"
         id="nazev"
         name="nazev"
         required
         minlength="4"
-        maxlength="30"
-        size="10"
+        maxlength="50"
+        size="50"
         value=""
       />
 

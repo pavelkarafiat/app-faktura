@@ -13,17 +13,16 @@ const accountPrefix = '670100';
 const accountNumber = '2201688103';
 const bankCode = '6210';
 
-const dodavatel = `Ing. Pavel Karafiát<br>
-Krynická 493/5<br>
-181 00, Praha 8<br>
-neplátce DPH<br>
-IČ: 02181762<br>
+const dodavatel = `Ing. Pavel Karafiát
+Krynická 493/5
+181 00, Praha 8
+neplátce DPH
+IČ: 02181762
 DIČ: CZ8205060952`;
 
 body.addEventListener('change', renderPage);
 window.addEventListener('load', renderPage);
 button.addEventListener('click', printDiv);
-
 
 function renderPage() {
   let templatePlatbaCredentialsLeft = `Datum vystavení:<br>
@@ -50,7 +49,9 @@ ${polozka.value}
 <b>Celkem k úhradě: ${castka.value} Kč.</b>
 </div>
 
-<img src="https://api.paylibo.com/paylibo/generator/czech/image?accountPrefix=${accountPrefix}&accountNumber=${accountNumber}&bankCode=${bankCode}&amount=${castka.value}&currency=CZK&message=${nazev.value}"  class="qrcode">
+<img src="https://api.paylibo.com/paylibo/generator/czech/image?accountPrefix=${accountPrefix}&accountNumber=${accountNumber}&bankCode=${bankCode}&amount=${
+    castka.value
+  }&currency=CZK&message=${nazev.value}"  class="qrcode">
 
 
 
@@ -59,7 +60,7 @@ ${polozka.value}
 <div>${templatePlatbaCredentialsRight}</div>
 </div>
   
-<div class="flexwrapp">
+<div class="flexwrapp textwrap">
 <p>ODBĚRATEL:<br>${odberatel.value}</p>
 <p>DODAVATEL:<br>${dodavatel}</p>
 </div>
@@ -67,7 +68,6 @@ ${polozka.value}
 <div class="footer">
 ${templateFooter}
 </div>`;
-
   page.innerHTML = template;
 }
 
@@ -88,18 +88,10 @@ function parseDate(str) {
 /* https://momentjs.com/ */
 /* https://www.superfaktura.cz/blog/nalezitosti-faktury-co-musi-obsahovat-faktura/ */
 
-/*generating pdf
-https://ekoopmans.github.io/html2pdf.js/
-*/
-
-function print() {
-  html2pdf(printElement);
-}
-
 function printDiv() {
-  var originalContents = document.body.innerHTML;
+  let originalContents = document.body.innerHTML;
   document.body.innerHTML = printElement.innerHTML;
-  console.log(printElement.innerHTML);
   window.print();
   document.body.innerHTML = originalContents;
+  location.reload();
 }

@@ -16,7 +16,8 @@ h1 {
   font-size: 45px;
 }
 
-label, button{
+label,
+button {
   display: block;
   font: 'Fira Sans', sans-serif;
 }
@@ -31,46 +32,57 @@ page {
   background: white;
   display: block;
   padding: 1.5cm;
-  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
-}
-page[size="A4"] {  
-  width: 21cm;
-  height: 29.7cm; 
+  box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
 }
 
-.polozka{
+@media screen {
+  page {
+    display: none;
+  }
+}
+
+page[size='A4'] {
+  width: 21cm;
+  height: 29.7cm;
+}
+
+.polozka {
   margin: 15px 0px 15px 0px;
-  background-color:rgb(214, 214, 214);
+  background-color: rgb(214, 214, 214);
   padding: 15px;
 }
 
-.castka{
+.castka {
   font-size: large;
   margin-bottom: 30px;
 }
 
-.footer{
+.footer {
   color: grey;
   font-size: small;
   margin-top: 50px;
 }
 
-.flexwrapp{
+.flexwrapp {
   display: flex;
 }
-.flexwrapp >*{
+.flexwrapp > * {
   margin-right: 0px;
   /*color: grey;*/
   width: 200px;
 }
 
-button{
+.textwrap{
+  white-space: pre;
+}
+
+button {
   margin-top: 30px;
   padding: 15px;
 }
 
-.qrcode{
-  width:180px;
+.qrcode {
+  width: 180px;
   margin-bottom: 30px;
   margin-left: -10px;
 }
